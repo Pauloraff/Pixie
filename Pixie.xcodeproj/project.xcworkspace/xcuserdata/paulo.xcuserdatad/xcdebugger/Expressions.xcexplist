@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "callbackForStream:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "destPtr">
+            </PersistentString>
+            <PersistentString
+               value = "((uint8_t *)startOfDestRow) - ((uint8_t *)imageBuffer)">
+            </PersistentString>
+            <PersistentString
+               value = "buffer">
+            </PersistentString>
+            <PersistentString
+               value = "destPtr - ((uint8_t *)imageBuffer)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
