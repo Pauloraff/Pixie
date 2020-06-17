@@ -706,43 +706,18 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="605" height="716"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ger-6s-S10">
-                                <rect key="frame" x="18" y="655" width="569" height="19"/>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="1" maxValue="16" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="6bR-Tn-Db6"/>
-                            </slider>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="agp-Fu-Mf6">
-                                <rect key="frame" x="18" y="680" width="569" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="BXY-7I-zmv">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <imageView autoresizesSubviews="NO" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="gmc-3Z-z7q">
-                                <rect key="frame" x="0.0" y="0.0" width="605" height="606"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageFrameStyle="grayBezel" id="4bf-Tk-lcf"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfV-BP-hOa">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="6Sb-7b-BdS"/>
                             </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="agp-Fu-Mf6" firstAttribute="trailing" secondItem="Ger-6s-S10" secondAttribute="trailing" id="0Dk-H5-iOp"/>
-                            <constraint firstItem="agp-Fu-Mf6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="OWO-AR-C5w"/>
-                            <constraint firstItem="agp-Fu-Mf6" firstAttribute="leading" secondItem="Ger-6s-S10" secondAttribute="leading" id="RGw-ID-fyN"/>
-                            <constraint firstItem="gmc-3Z-z7q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="3" id="T3G-AP-ZkO"/>
-                            <constraint firstItem="agp-Fu-Mf6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="TS5-rh-bvO"/>
-                            <constraint firstAttribute="trailing" secondItem="agp-Fu-Mf6" secondAttribute="trailing" constant="20" symbolic="YES" id="TyK-Zx-iVv"/>
-                            <constraint firstItem="Ger-6s-S10" firstAttribute="centerX" secondItem="gmc-3Z-z7q" secondAttribute="centerX" id="WI1-di-PAy"/>
-                            <constraint firstItem="Ger-6s-S10" firstAttribute="top" secondItem="agp-Fu-Mf6" secondAttribute="bottom" constant="8" symbolic="YES" id="aVX-ad-tYj"/>
-                            <constraint firstAttribute="bottom" secondItem="gmc-3Z-z7q" secondAttribute="bottom" constant="3" id="kbH-az-RHA"/>
-                            <constraint firstItem="gmc-3Z-z7q" firstAttribute="top" secondItem="Ger-6s-S10" secondAttribute="bottom" constant="54" id="lSU-Uw-bEB"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="magnificationMultipler" destination="Ger-6s-S10" id="4LJ-lr-IQR"/>
-                        <outlet property="magnifiedView" destination="gmc-3Z-z7q" id="2kH-hP-heh"/>
-                        <outlet property="mouseLocationLabel" destination="agp-Fu-Mf6" id="D6h-he-h1t"/>
+                        <outlet property="magnifiedView" destination="YfV-BP-hOa" id="Ys6-tk-PTr"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

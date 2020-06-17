@@ -237,7 +237,7 @@ void callbackForStream(ScreenLayout * layout, size_t n, CGDisplayStreamFrameStat
         if (theImage != nil) {
             theImage = nil;
         }
-        theImage = [[NSImage alloc] initWithCGImage:iref size:NSMakeSize(width, height)];
+        theImage = [[NSImage alloc] initWithCGImage:iref size:destSize];
         
         CGDataProviderRelease(provider);
         
@@ -392,11 +392,6 @@ NSTimer * updateTimer;
 
 
 - (void)timerFired:(NSTimer *)timer {
-    NSPoint mouseLoc = [NSEvent mouseLocation];
-
-    [self.mouseLocationLabel setStringValue:[NSString stringWithFormat:@"%d %d", (int)mouseLoc.x, (int)mouseLoc.y]];
-    
-    scaling = (UInt)self.magnificationMultipler.integerValue;
     targetImageSize = self.magnifiedView.bounds.size;
 }
 

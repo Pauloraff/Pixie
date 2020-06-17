@@ -10,9 +10,7 @@
 
 @interface ViewController : NSViewController
 
-@property (weak) IBOutlet NSTextField *mouseLocationLabel;
 @property (weak) IBOutlet NSImageView *magnifiedView;
-@property (weak) IBOutlet NSSlider *magnificationMultipler;
 
 @end
 
