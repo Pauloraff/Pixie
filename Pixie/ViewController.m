@@ -39,7 +39,8 @@ int nUpdates = 0;
 NSImage * theImage = nil;
 UInt scaling = 1;
 CGSize targetImageSize;
-
+NSPoint usedMouseLoc;
+BOOL lockImage = NO;
 
 void clearScreenLayout(ScreenLayout * layout) {
     layout->displayCount = 0;
@@ -94,11 +95,9 @@ void callbackForStream(ScreenLayout * layout, size_t n, CGDisplayStreamFrameStat
         
         CFDictionaryGetKeysAndValues(d, &keys, &values);
         
-        // debugging
-        // scaling = 1;
-        
-        NSPoint mouseLoc = [NSEvent mouseLocation]; //get current mouse position
-        mouseLoc.y = layout->fullExtent.size.height - mouseLoc.y;
+        if (lockImage) {
+            return;
+        }
         
         // we have the mouse location, now grab the 'source rect' from the image data
         // get the view controller's view width and height
@@ -120,7 +119,7 @@ void callbackForStream(ScreenLayout * layout, size_t n, CGDisplayStreamFrameStat
         CGSize destSize = CGSizeMake( targetImageSize.width, targetImageSize.height );
         
         CGSize sourceSize = CGSizeMake( destSize.width / scaling, destSize.height / scaling );
-        CGRect sourceRect = CGRectMake( mouseLoc.x - (sourceSize.width / 2.0), mouseLoc.y  - (sourceSize.height / 2.0),
+        CGRect sourceRect = CGRectMake( usedMouseLoc.x - (sourceSize.width / 2.0), usedMouseLoc.y  - (sourceSize.height / 2.0),
                                        sourceSize.width, sourceSize.height );
         
         
@@ -391,6 +390,26 @@ CGError DisplayRegistrationCallBackSuccessful = kCGErrorSuccess;
 
 NSTimer * updateTimer;
 
+BOOL lockHorizontal = NO;
+BOOL lockVertical = NO;
+BOOL fullscreen = NO;
+
+NSPoint mouseLoc;
+
+- (IBAction)lockLocation:(id)sender {
+    lockImage = !lockImage;
+}
+- (IBAction)lockHorizontal:(id)sender {
+    lockHorizontal = !lockHorizontal;
+}
+
+- (IBAction)lockVertical:(id)sender {
+    lockVertical = !lockVertical;
+}
+- (IBAction)fullScreenToggle:(id)sender {
+    fullscreen = !fullscreen;
+}
+
 - (IBAction)increaseMagnification:(id)sender {
     scaling = scaling * 2;
 }
@@ -436,8 +455,19 @@ NSTimer * updateTimer;
     return TRUE;
 }
 
+
 - (void)timerFired:(NSTimer *)timer {
+    if (CGRectEqualToRect(theLayout.fullExtent, CGRectZero)) {
+        return;
+    }
+    
     targetImageSize = self.magnifiedView.bounds.size;
+    
+    mouseLoc = [NSEvent mouseLocation]; //get current mouse position
+    mouseLoc.y = theLayout.fullExtent.size.height - mouseLoc.y;
+
+    if (!lockHorizontal) { usedMouseLoc.x = mouseLoc.x; }
+    if (!lockVertical) { usedMouseLoc.y = mouseLoc.y; }
 }
 
 

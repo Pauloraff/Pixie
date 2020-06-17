@@ -22,6 +22,11 @@
 - (IBAction)magnify32x:(id)sender;
 - (IBAction)magnify64x:(id)sender;
 
+- (IBAction)lockLocation:(id)sender;
+- (IBAction)lockHorizontal:(id)sender;
+- (IBAction)lockVertical:(id)sender;
+- (IBAction)fullScreenToggle:(id)sender;
+
 @property (weak) IBOutlet NSImageView *magnifiedView;
 
 @end

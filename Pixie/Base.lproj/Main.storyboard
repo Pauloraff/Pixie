@@ -96,27 +96,27 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="View" id="H8h-7b-M4v">
+                            <menuItem title="View" id="aUF-d1-5bR">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
-                                        <menuItem title="Lock Image" keyEquivalent="l" id="snW-S8-Cw5">
+                                        <menuItem title="Lock Image" onStateImage="NSMenuOnStateTemplate" keyEquivalent="l" id="snW-S8-Cw5">
+                                            <attributedString key="attributedTitle"/>
                                             <connections>
-                                                <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
+                                                <action selector="lockLocation:" target="Ady-hI-5gd" id="Ruj-kZ-oUo"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Lock Horizontal" keyEquivalent="x" id="1UK-8n-QPP">
+                                        <menuItem title="Lock Horizontal" onStateImage="NSMenuOnStateTemplate" keyEquivalent="x" id="1UK-8n-QPP">
                                             <connections>
-                                                <action selector="runToolbarCustomizationPalette:" target="Ady-hI-5gd" id="pQI-g3-MTW"/>
+                                                <action selector="lockHorizontal:" target="Ady-hI-5gd" id="T08-VH-FKM"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
-                                        <menuItem title="Lock Vertical" keyEquivalent="y" id="kIP-vf-haE">
+                                        <menuItem title="Lock Vertical" onStateImage="NSMenuOnStateTemplate" keyEquivalent="y" id="kIP-vf-haE">
                                             <connections>
-                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="lockVertical:" target="Ady-hI-5gd" id="9B5-CB-qCB"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="FullScreen" keyEquivalent="f" id="4J7-dP-txa">
+                                        <menuItem title="FullScreen" onStateImage="NSMenuOnStateTemplate" keyEquivalent="f" id="4J7-dP-txa">
                                             <connections>
                                                 <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
                                             </connections>
@@ -124,54 +124,54 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Magnify" id="aUF-d1-5bR">
+                            <menuItem title="Magnify" id="2wB-2G-tH6">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Magnify" id="nXU-cK-z0H">
+                                <menu key="submenu" title="Magnify" id="Byp-RT-LG3">
                                     <items>
-                                        <menuItem title="Increase" keyEquivalent="+" id="id7-SE-rQC">
+                                        <menuItem title="Increase" keyEquivalent="+" id="Xxa-jH-mHm">
                                             <connections>
-                                                <action selector="increaseMagnification:" target="Ady-hI-5gd" id="GDj-pb-pFg"/>
+                                                <action selector="increaseMagnification:" target="Ady-hI-5gd" id="OXh-Oh-b8x"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Decrease" keyEquivalent="-" id="vkl-rI-D7C">
+                                        <menuItem title="Decrease" keyEquivalent="-" id="oPL-eU-bp6">
                                             <connections>
-                                                <action selector="decreaseMagnification:" target="Ady-hI-5gd" id="3Oc-xV-k7P"/>
+                                                <action selector="decreaseMagnification:" target="Ady-hI-5gd" id="pnY-Gu-QAc"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="WWQ-6H-M6G"/>
-                                        <menuItem title="100%" keyEquivalent="1" id="seT-Ee-VgD">
+                                        <menuItem isSeparatorItem="YES" id="YJa-D5-08i"/>
+                                        <menuItem title="100%" keyEquivalent="1" id="8e7-YV-HK3">
                                             <connections>
-                                                <action selector="magnify1x:" target="Ady-hI-5gd" id="dVf-My-a4V"/>
+                                                <action selector="magnify1x:" target="Ady-hI-5gd" id="X0m-LB-46A"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="200%" keyEquivalent="2" id="Pyg-Am-dmL">
+                                        <menuItem title="200%" keyEquivalent="2" id="uz3-Jb-2Ll">
                                             <connections>
-                                                <action selector="magnify2x:" target="Ady-hI-5gd" id="O5k-Wb-N0T"/>
+                                                <action selector="magnify2x:" target="Ady-hI-5gd" id="BSP-xe-O6v"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="400%" keyEquivalent="3" id="jUr-cY-K9Q">
+                                        <menuItem title="400%" keyEquivalent="3" id="nXN-Uv-svG">
                                             <connections>
-                                                <action selector="magnify4x:" target="Ady-hI-5gd" id="7bd-dx-P6c"/>
+                                                <action selector="magnify4x:" target="Ady-hI-5gd" id="eFM-2i-pII"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="800%" keyEquivalent="4" id="NDg-TO-5Pk">
+                                        <menuItem title="800%" keyEquivalent="4" id="bz6-lm-hoI">
                                             <connections>
-                                                <action selector="magnify8x:" target="Ady-hI-5gd" id="ph8-aO-DRa"/>
+                                                <action selector="magnify8x:" target="Ady-hI-5gd" id="0Ra-62-SY7"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="1600%" keyEquivalent="5" id="GZq-ag-ryD">
+                                        <menuItem title="1600%" keyEquivalent="5" id="XGa-tV-Owe">
                                             <connections>
-                                                <action selector="magnify16x:" target="Ady-hI-5gd" id="AwU-TU-iDJ"/>
+                                                <action selector="magnify16x:" target="Ady-hI-5gd" id="Bgs-YW-hUb"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="3200%" keyEquivalent="6" id="ipl-IK-Lga">
+                                        <menuItem title="3200%" keyEquivalent="6" id="JhV-7U-RrI">
                                             <connections>
-                                                <action selector="magnify32x:" target="Ady-hI-5gd" id="sLJ-2q-vNi"/>
+                                                <action selector="magnify32x:" target="Ady-hI-5gd" id="VuN-NF-aFe"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="6400%" keyEquivalent="7" id="u33-rK-e4w">
+                                        <menuItem title="6400%" keyEquivalent="7" id="eMo-vb-uUj">
                                             <connections>
-                                                <action selector="magnify64x:" target="Ady-hI-5gd" id="zdp-K8-yIM"/>
+                                                <action selector="magnify64x:" target="Ady-hI-5gd" id="fCO-Z2-ERa"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -246,4 +246,7 @@
             <point key="canvasLocation" x="145" y="1023"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSMenuOnStateTemplate" width="12" height="12"/>
+    </resources>
 </document>
