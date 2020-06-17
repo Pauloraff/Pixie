@@ -40,6 +40,7 @@ NSImage * theImage = nil;
 UInt scaling = 1;
 CGSize targetImageSize;
 
+
 void clearScreenLayout(ScreenLayout * layout) {
     layout->displayCount = 0;
     layout->fullExtent = CGRectZero;
@@ -390,6 +391,50 @@ CGError DisplayRegistrationCallBackSuccessful = kCGErrorSuccess;
 
 NSTimer * updateTimer;
 
+- (IBAction)increaseMagnification:(id)sender {
+    scaling = scaling * 2;
+}
+
+- (IBAction)decreaseMagnification:(id)sender {
+    scaling /= 2;
+}
+
+- (IBAction)magnify1x:(id)sender {
+    scaling = 1;
+}
+
+- (IBAction)magnify2x:(id)sender {
+    scaling = 2;
+}
+
+- (IBAction)magnify4x:(id)sender {
+    scaling = 4;
+}
+
+- (IBAction)magnify8x:(id)sender {
+    scaling = 8;
+}
+
+- (IBAction)magnify16x:(id)sender {
+    scaling = 16;
+}
+
+- (IBAction)magnify32x:(id)sender {
+    scaling = 32;
+}
+
+- (IBAction)magnify64x:(id)sender {
+    scaling = 64;
+}
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+    if (menuItem.action == @selector(increaseMagnification:)) {
+        return scaling < 64;
+    } else if (menuItem.action == @selector(decreaseMagnification:)) {
+        return scaling > 1;
+    }
+    return TRUE;
+}
 
 - (void)timerFired:(NSTimer *)timer {
     targetImageSize = self.magnifiedView.bounds.size;

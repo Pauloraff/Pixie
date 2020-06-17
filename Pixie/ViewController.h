@@ -8,7 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController<NSMenuItemValidation>
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem;
+- (IBAction)increaseMagnification:(id)sender;
+- (IBAction)decreaseMagnification:(id)sender;
+
+- (IBAction)magnify1x:(id)sender;
+- (IBAction)magnify2x:(id)sender;
+- (IBAction)magnify4x:(id)sender;
+- (IBAction)magnify8x:(id)sender;
+- (IBAction)magnify16x:(id)sender;
+- (IBAction)magnify32x:(id)sender;
+- (IBAction)magnify64x:(id)sender;
 
 @property (weak) IBOutlet NSImageView *magnifiedView;
 
